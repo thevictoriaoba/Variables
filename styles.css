@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+:root {
+    /* Variables for card styling */
+    --card-bg: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --card-shadow-hover: rgba(0, 0, 0, 0.3);
+    
+    --card-width: 300px;
+    --card-height: 200px;
+    
+    --transition-duration: 0.3s;
+    --scale-factor: 1.05;
+    --text-color: #000000; /* Default text color */
+    --text-color-hover: #ffffff; /* Hover text color */
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url(./Images/images\ \(1\).jpeg);
+    background-repeat: no-repeat;
+    background-size:cover ;
+    font-family: Arial, sans-serif;
+  }
+  
+  .card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    width: var(--card-width);
+    height: var(--card-height);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--card-shadow);
+    
+    /* Transition for scaling, shadow, and text color */
+    transition: transform var(--transition-duration), 
+                box-shadow var(--transition-duration),
+                color var(--transition-duration);
+  }
+  
+  .card:hover {
+    animation: colorChange 3s infinite; /* Trigger color-changing animation */
+    box-shadow: 0 8px 16px var(--card-shadow-hover);
+    transform: scale(var(--scale-factor));
+    color: var(--text-color-hover); /* Change text color to white */
+  }
+  
+  /* Keyframe animation for changing colors */
+  @keyframes colorChange {
+    0% {
+      background-color: #3498db; /* Blue */
+    }
+    25% {
+      background-color: #e74c3c; /* Red */
+    }
+    50% {
+      background-color: #2ecc71; /* Green */
+    }
+    75% {
+      background-color: #f39c12; /* Orange */
+    }
+    100% {
+      background-color: #3498db; /* Back to Blue */
+    }
+  }
+  
+  .card h2 {
+    margin: 0 0 10px;
+  }
+  
+  .card p {
+    margin: 0;
+  }
+  
